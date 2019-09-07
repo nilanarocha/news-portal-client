@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import config from "../helpers/config";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { Media, Row, Col } from "react-bootstrap";
@@ -22,7 +23,7 @@ class HomePage extends Component {
       const [worldNews, entertainmentNews] = await Promise.all(
         NEWS_CATEGORY.map(newsCategory => {
           return axios.get(
-            `http://localhost:3000/api/search?limit=${MAX_NUMBER_NEWS_PER_CATEGORY}&news_category=${newsCategory}`
+            `${config.API_URL}/api/search?limit=${MAX_NUMBER_NEWS_PER_CATEGORY}&news_category=${newsCategory}`
           );
         })
       );

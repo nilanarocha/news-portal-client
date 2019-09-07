@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import config from "../helpers/config";
 import { Link } from "react-router-dom";
 import BaseLayout from "./BaseLayout";
 import queryString from "query-string";
@@ -29,7 +30,7 @@ class SearchPage extends Component {
       }
 
       const response = await axios.get(
-        `http://localhost:3000/api/search?${search.join("&")}`
+        `${config.API_URL}/api/search?${search.join("&")}`
       );
       this.setState({
         search: response.data

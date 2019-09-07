@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import config from "../helpers/config";
 import BaseLayout from "./BaseLayout";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -20,7 +21,7 @@ class NewsCategoryPage extends Component {
       }
 
       const response = await axios.get(
-        `http://localhost:3000/api/search?${search.join("&")}`
+        `${config.API_URL}/api/search?${search.join("&")}`
       );
       this.setState({
         news: response.data

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import config from "../helpers/config";
 import BaseLayout from "./BaseLayout";
 import { Link } from "react-router-dom";
 import axios from "axios";
@@ -16,11 +17,9 @@ class AuthorPage extends Component {
   async componentDidMount() {
     try {
       const [authorResponse, newsByAuthorResponse] = await Promise.all([
+        axios.get(`${config.API_URL}/api/author/${this.props.match.params.id}`),
         axios.get(
-          `http://localhost:3000/api/author/${this.props.match.params.id}`
-        ),
-        axios.get(
-          `http://localhost:3000/api/news-by-author/${this.props.match.params.id}`
+          `${config.API_URL}/api/news-by-author/${this.props.match.params.id}`
         )
       ]);
       this.setState({

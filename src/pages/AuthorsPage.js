@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import BaseLayout from "./BaseLayout";
+import config from "../helpers/config";
 import { Link } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
 import axios from "axios";
@@ -13,7 +14,7 @@ class AuthorsPage extends Component {
 
   async componentDidMount() {
     try {
-      const response = await axios.get("http://localhost:3000/api/author");
+      const response = await axios.get(`${config.API_URL}/api/author`);
       this.setState({
         authors: response.data
       });
@@ -32,8 +33,8 @@ class AuthorsPage extends Component {
           {authors.length > 0 ? (
             authors.map(author => {
               return (
-                <Col xs={12} sm={6} md={4} lg={4}>
-                  <Link key={author.id} to={`/author/${author.id}`}>
+                <Col key={author.id} xs={12} sm={6} md={4} lg={4}>
+                  <Link to={`/author/${author.id}`}>
                     <div className="image-flip">
                       <div className="mainflip">
                         <div className="frontside">

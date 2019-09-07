@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import config from "../helpers/config";
 import BaseLayout from "./BaseLayout";
 import axios from "axios";
 import { formatDate } from "../helpers/format-date";
@@ -12,7 +13,7 @@ class NewsPage extends Component {
   async componentDidMount() {
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/news/${this.props.match.params.id}`
+        `${config.API_URL}/api/news/${this.props.match.params.id}`
       );
       this.setState({
         news: response.data

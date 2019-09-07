@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import config from "../../helpers/config";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Footer.css";
@@ -11,7 +12,7 @@ class Footer extends Component {
   async componentDidMount() {
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/news?limit=${MAX_NUMBER_NEWS_PER_CATEGORY_IN_FOOTER}`
+        `${config.API_URL}/api/news?limit=${MAX_NUMBER_NEWS_PER_CATEGORY_IN_FOOTER}`
       );
       this.setState({
         footerNews: response.data
