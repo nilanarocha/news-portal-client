@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Form, Button } from "react-bootstrap";
 import { withRouter } from "react-router";
 import queryString from "query-string";
 
@@ -27,27 +28,25 @@ class BaseSearchForm extends Component {
 
   render() {
     return (
-      <form className="search-area" method="get" onSubmit={this.handleSubmit}>
-        <div className="form-row">
-          <div className="form-group col-md-8">
-            <label htmlFor="search">Search</label>
-            <input
-              className="search-area form-control form-control-lg"
-              type="search"
-              name="search"
-              id="search"
-              value={this.state.searchText || ""}
-              onChange={this.handleChange}
-            />
-          </div>
-          <button
-            type="submit"
-            className="btn btn-primary btn-lg col btn btn-dark"
-          >
-            Search
-          </button>
-        </div>
-      </form>
+      <Form
+        inline
+        className="search-area"
+        method="get"
+        onSubmit={this.handleSubmit}
+      >
+        <Form.Group controlId="formBasicPassword">
+          <Form.Control
+            type="search"
+            placeholder="Search ..."
+            name="search"
+            value={this.state.searchText || ""}
+            onChange={this.handleChange}
+          />
+        </Form.Group>
+        <Button variant="primary" type="submit">
+          Search
+        </Button>
+      </Form>
     );
   }
 }

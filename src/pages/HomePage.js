@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { Media } from "react-bootstrap";
 import BaseLayout from "./BaseLayout";
 
 import { returnMaxWordsInText } from "../helpers/truncate-words-in-text";
@@ -43,22 +44,32 @@ class HomePage extends Component {
         <div>
           <h2>World</h2>
           {world.length > 0 ? (
-            world.map(item => {
-              return (
-                <Link key={item.id} to={`/news/${item.id}/${item.title}`}>
-                  <div>
-                    <img src={item.image} alt="author" width="100" />
-                    <h3>{item.title}</h3>
-                    <div>
-                      {returnMaxWordsInText(
-                        item.description,
-                        MAX_WORDS_TO_SHOW_IN_NEWS_DESCRIPTION
-                      )}
-                    </div>
-                  </div>
-                </Link>
-              );
-            })
+            <ul className="list-unstyled">
+              {world.map(item => {
+                return (
+                  <Link key={item.id} to={`/news/${item.id}/${item.title}`}>
+                    <Media as="li">
+                      <img
+                        width={200}
+                        height={200}
+                        className="mr-3"
+                        src={item.image}
+                        alt={item.title}
+                      />
+                      <Media.Body>
+                        <h5>{item.title}</h5>
+                        <div>
+                          {returnMaxWordsInText(
+                            item.description,
+                            MAX_WORDS_TO_SHOW_IN_NEWS_DESCRIPTION
+                          )}
+                        </div>
+                      </Media.Body>
+                    </Media>
+                  </Link>
+                );
+              })}
+            </ul>
           ) : (
             <h3>No results</h3>
           )}
@@ -66,22 +77,32 @@ class HomePage extends Component {
         <div>
           <h2>Entertainment</h2>
           {entertainment.length > 0 ? (
-            entertainment.map(item => {
-              return (
-                <Link key={item.id} to={`/news/${item.id}/${item.title}`}>
-                  <div>
-                    <img src={item.image} alt="author" width="100" />
-                    <h3>{item.title}</h3>
-                    <div>
-                      {returnMaxWordsInText(
-                        item.description,
-                        MAX_WORDS_TO_SHOW_IN_NEWS_DESCRIPTION
-                      )}
-                    </div>
-                  </div>
-                </Link>
-              );
-            })
+            <ul className="list-unstyled">
+              {entertainment.map(item => {
+                return (
+                  <Link key={item.id} to={`/news/${item.id}/${item.title}`}>
+                    <Media as="li">
+                      <img
+                        width={200}
+                        height={200}
+                        className="mr-3"
+                        src={item.image}
+                        alt={item.title}
+                      />
+                      <Media.Body>
+                        <h5>{item.title}</h5>
+                        <div>
+                          {returnMaxWordsInText(
+                            item.description,
+                            MAX_WORDS_TO_SHOW_IN_NEWS_DESCRIPTION
+                          )}
+                        </div>
+                      </Media.Body>
+                    </Media>
+                  </Link>
+                );
+              })}
+            </ul>
           ) : (
             <h3>No results</h3>
           )}
