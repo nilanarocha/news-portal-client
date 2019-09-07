@@ -36,7 +36,10 @@ class NewsPage extends Component {
           <img src={news.image} width="200" alt={news.title} />
           <h1>{news.title}</h1>
           <p>
-            {news.category.name} -{" "}
+            <Link to={`/news/${news.category.name.toLowerCase()}`}>
+              {news.category.name}
+            </Link>{" "}
+            -{" "}
             <Link to={`/author/${news.authors_id}`}>By {news.author.name}</Link>
             , {formatDate(news.date)}{" "}
           </p>
