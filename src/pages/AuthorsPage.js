@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import BaseLayout from "./BaseLayout";
 import { Link } from "react-router-dom";
+import { Row, Col } from "react-bootstrap";
 import axios from "axios";
+
+import "./AuthorsPage.css";
 
 class AuthorsPage extends Component {
   state = {
@@ -25,22 +28,40 @@ class AuthorsPage extends Component {
 
     return (
       <BaseLayout>
-        {authors.length > 0 ? (
-          authors.map(author => {
-            return (
-              <Link key={author.id} to={`/author/${author.id}`}>
-                <div>
-                  <img src={author.image} width="200" alt={author.name} />
-                  <h1>{author.name}</h1>
-                  <div>{author.description}</div>
-                </div>
-              </Link>
-            );
-          })
-        ) : (
-          <h3>No results</h3>
-        )}
-        <div></div>
+        <Row>
+          {authors.length > 0 ? (
+            authors.map(author => {
+              return (
+                <Col xs={12} sm={6} md={4} lg={4}>
+                  <Link key={author.id} to={`/author/${author.id}`}>
+                    <div className="image-flip">
+                      <div className="mainflip">
+                        <div className="frontside">
+                          <div className="card">
+                            <div className="card-body text-center">
+                              <p>
+                                <img
+                                  className=" img-fluid"
+                                  src={author.image}
+                                  alt="author"
+                                  width="100"
+                                />
+                              </p>
+                              <h4 className="card-title">{author.title}</h4>
+                              <p className="card-text">{author.description}</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </Col>
+              );
+            })
+          ) : (
+            <h3>No results</h3>
+          )}
+        </Row>
       </BaseLayout>
     );
   }
