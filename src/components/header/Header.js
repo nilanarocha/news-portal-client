@@ -26,6 +26,9 @@ class Header extends Component {
                 <Link className="nav-link" to="/author">
                   Authors
                 </Link>
+                <Link className="nav-link" to="/weather">
+                  Weather
+                </Link>
               </Nav>
               <SearchForm />
             </Navbar.Collapse>
