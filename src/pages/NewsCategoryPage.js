@@ -4,6 +4,8 @@ import BaseLayout from "./BaseLayout";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { returnMaxWordsInText } from "../helpers/truncate-words-in-text";
+import { Media, Row, Col } from "react-bootstrap";
+import Advertisement from "../components/advertisement/Advertisement";
 
 const MAX_WORDS_TO_SHOW_IN_NEWS_DESCRIPTION = 20;
 class NewsCategoryPage extends Component {
@@ -37,29 +39,45 @@ class NewsCategoryPage extends Component {
 
     return (
       <BaseLayout>
-        <div>
-          {news.length > 0 ? (
-            news.map(item => {
-              return (
-                <Link key={item.id} to={`/news/${item.id}/${item.title}`}>
-                  <div>
-                    <img src={item.image} alt="author" width="100" />
-                    <h3>{item.title}</h3>
-                    <div>
-                      {" "}
-                      {returnMaxWordsInText(
-                        item.description,
-                        MAX_WORDS_TO_SHOW_IN_NEWS_DESCRIPTION
-                      )}
-                    </div>
-                  </div>
-                </Link>
-              );
-            })
-          ) : (
-            <h3>No results</h3>
-          )}
-        </div>
+        <Row>
+          <Col xs={12} md={8}>
+            <div>
+              {news.length > 0 ? (
+                <ul className="list-unstyled">
+                  {news.map(item => {
+                    return (
+                      <Link key={item.id} to={`/news/${item.id}/${item.title}`}>
+                        <Media as="li">
+                          <img
+                            width={200}
+                            height={200}
+                            className="mr-3"
+                            src={item.image}
+                            alt="author"
+                          />
+                          <Media.Body>
+                            <h3>{item.title}</h3>
+                            <div>
+                              {returnMaxWordsInText(
+                                item.description,
+                                MAX_WORDS_TO_SHOW_IN_NEWS_DESCRIPTION
+                              )}
+                            </div>
+                          </Media.Body>
+                        </Media>
+                      </Link>
+                    );
+                  })}
+                </ul>
+              ) : (
+                <h3>No results</h3>
+              )}
+            </div>
+          </Col>
+          <Col xs={12} md={4}>
+            <Advertisement />
+          </Col>
+        </Row>
       </BaseLayout>
     );
   }

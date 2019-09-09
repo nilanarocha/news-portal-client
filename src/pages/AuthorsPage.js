@@ -7,6 +7,11 @@ import axios from "axios";
 
 import "./AuthorsPage.css";
 
+import { returnMaxWordsInText } from "../helpers/truncate-words-in-text";
+
+import Advertisement from "../components/advertisement/Advertisement";
+
+const MAX_WORDS_TO_SHOW_IN_NEWS_DESCRIPTION = 20;
 class AuthorsPage extends Component {
   state = {
     authors: []
@@ -49,7 +54,16 @@ class AuthorsPage extends Component {
                                 />
                               </p>
                               <h4 className="card-title">{author.title}</h4>
-                              <p className="card-text">{author.description}</p>
+
+                              <div>
+                                {" "}
+                                <p>
+                                  {returnMaxWordsInText(
+                                    author.description,
+                                    MAX_WORDS_TO_SHOW_IN_NEWS_DESCRIPTION
+                                  )}
+                                </p>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -62,6 +76,9 @@ class AuthorsPage extends Component {
           ) : (
             <h3>No results</h3>
           )}
+          <Col xs={12} md={4}>
+            <Advertisement />
+          </Col>
         </Row>
       </BaseLayout>
     );
