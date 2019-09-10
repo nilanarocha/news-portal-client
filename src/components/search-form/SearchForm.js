@@ -43,7 +43,7 @@ class BaseSearchForm extends Component {
             onChange={this.handleChange}
           />
         </Form.Group>
-        <Button variant="primary" type="submit">
+        <Button variant="outline-danger" type="submit">
           Search
         </Button>
       </Form>

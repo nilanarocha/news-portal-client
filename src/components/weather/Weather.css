@@ -1,0 +1,31 @@
+.containerWeather {
+  width: 340px;
+  border: 1px solid #E5E5E5;
+  margin-bottom: 30px;
+  padding-top: 20px;
+}
+
+.tableWeather {
+  border: 1px solid #E5E5E5;
+}
+
+.search {
+  text-align: center;
+  height: 35px;
+  width: 300px;
+}
+
+.submit {
+  width: 300px;
+  height: 35px;
+}
+
+.city {
+  text-align: center;
+  background-color: #F2F3F5;
+  height: 35px;
+}
+
+.tHead {
+  color: #7F8080;
+}

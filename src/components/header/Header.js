@@ -10,7 +10,9 @@ class Header extends Component {
       <header>
         <Navbar bg="light" expand="lg">
           <Container>
-            <Navbar.Brand href="/">News Portal</Navbar.Brand>
+            <Navbar.Brand variant="outline-danger" href="/">
+              News Portal
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
@@ -25,9 +27,6 @@ class Header extends Component {
                 </Link>
                 <Link className="nav-link" to="/author">
                   Authors
-                </Link>
-                <Link className="nav-link" to="/weather">
-                  Weather
                 </Link>
               </Nav>
               <SearchForm />

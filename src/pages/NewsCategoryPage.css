@@ -1,0 +1,15 @@
+.containerNewsCategory {
+  border: 1px solid #E5E5E5;
+  margin-bottom: 30px;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.cards {
+  margin-bottom: 10px;
+}
+
+.linkNews {
+  color: red;
+}

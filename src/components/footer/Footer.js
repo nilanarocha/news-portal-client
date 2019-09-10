@@ -68,7 +68,7 @@ class Footer extends Component {
                 </div>
               </div>
               <div className="col-12 col-md-6 col-lg-4">
-                <div className="kilimanjaro_part">
+                <div className="linkFooter">
                   <h5>Latest News</h5>
 
                   {footerNews.length > 0 &&

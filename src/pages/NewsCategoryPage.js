@@ -6,6 +6,9 @@ import axios from "axios";
 import { returnMaxWordsInText } from "../helpers/truncate-words-in-text";
 import { Media, Row, Col } from "react-bootstrap";
 import Advertisement from "../components/advertisement/Advertisement";
+import Weather from "../components/weather/Weather";
+
+import "./NewsCategoryPage.css";
 
 const MAX_WORDS_TO_SHOW_IN_NEWS_DESCRIPTION = 20;
 class NewsCategoryPage extends Component {
@@ -42,39 +45,47 @@ class NewsCategoryPage extends Component {
         <Row>
           <Col xs={12} md={8}>
             <div>
-              {news.length > 0 ? (
-                <ul className="list-unstyled">
-                  {news.map(item => {
-                    return (
-                      <Link key={item.id} to={`/news/${item.id}/${item.title}`}>
-                        <Media as="li">
-                          <img
-                            width={200}
-                            height={200}
-                            className="mr-3"
-                            src={item.image}
-                            alt="author"
-                          />
-                          <Media.Body>
-                            <h3>{item.title}</h3>
-                            <div>
-                              {returnMaxWordsInText(
-                                item.description,
-                                MAX_WORDS_TO_SHOW_IN_NEWS_DESCRIPTION
-                              )}
-                            </div>
-                          </Media.Body>
-                        </Media>
-                      </Link>
-                    );
-                  })}
-                </ul>
-              ) : (
-                <h3>No results</h3>
-              )}
+              <div className="containerNewsCategory">
+                {news.length > 0 ? (
+                  <ul className="list-unstyled">
+                    {news.map(item => {
+                      return (
+                        <Link
+                          className="linkNews"
+                          key={item.id}
+                          to={`/news/${item.id}/${item.title}`}
+                        >
+                          <Media className="cards" as="li">
+                            <img
+                              width={200}
+                              height={200}
+                              className="mr-3"
+                              src={item.image}
+                              alt="author"
+                            />
+                            <Media.Body>
+                              <h3>{item.title}</h3>
+                              <div>
+                                {returnMaxWordsInText(
+                                  item.description,
+                                  MAX_WORDS_TO_SHOW_IN_NEWS_DESCRIPTION
+                                )}
+                              </div>
+                            </Media.Body>
+                          </Media>
+                          <hr />
+                        </Link>
+                      );
+                    })}
+                  </ul>
+                ) : (
+                  <h3>No results</h3>
+                )}
+              </div>
             </div>
           </Col>
           <Col xs={12} md={4}>
+            <Weather />
             <Advertisement />
           </Col>
         </Row>

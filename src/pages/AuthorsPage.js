@@ -4,12 +4,10 @@ import config from "../helpers/config";
 import { Link } from "react-router-dom";
 import { Row, Col } from "react-bootstrap";
 import axios from "axios";
-
 import "./AuthorsPage.css";
-
 import { returnMaxWordsInText } from "../helpers/truncate-words-in-text";
-
 import Advertisement from "../components/advertisement/Advertisement";
+import Weather from "../components/weather/Weather";
 
 const MAX_WORDS_TO_SHOW_IN_NEWS_DESCRIPTION = 20;
 class AuthorsPage extends Component {
@@ -77,6 +75,7 @@ class AuthorsPage extends Component {
             <h3>No results</h3>
           )}
           <Col xs={12} md={4}>
+            <Weather />
             <Advertisement />
           </Col>
         </Row>

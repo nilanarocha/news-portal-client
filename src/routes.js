@@ -7,7 +7,6 @@ import SearchPage from "./pages/SearchPage";
 import HomePage from "./pages/HomePage";
 import NewsCategoryPage from "./pages/NewsCategoryPage";
 import AuthorsPage from "./pages/AuthorsPage";
-import WeatherPage from "./pages/WeatherPage";
 
 const Routes = (
   <Router>
@@ -18,7 +17,6 @@ const Routes = (
     <Route exact path="/author" component={AuthorsPage} />
     <Route exact path="/author/:id" component={AuthorPage} />
     <Route exact path="/search" component={SearchPage} />
-    <Route exact path="/weather" component={WeatherPage} />
   </Router>
 );
 

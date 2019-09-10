@@ -7,6 +7,8 @@ import { Media, Row, Col } from "react-bootstrap";
 import Advertisement from "../components/advertisement/Advertisement";
 
 import { returnMaxWordsInText } from "../helpers/truncate-words-in-text";
+import Weather from "../components/weather/Weather";
+import "./AuthorPage.css";
 
 const MAX_WORDS_TO_SHOW_IN_NEWS_DESCRIPTION = 20;
 
@@ -45,21 +47,30 @@ class AuthorPage extends Component {
         <Row>
           <Col xs={12} md={8}>
             <div>
-              <div>
-                <img src={author.image} width="200" alt={author.name} />
+              <div className="containerAuthor">
+                <img
+                  className="imgAuthor"
+                  src={author.image}
+                  width="200"
+                  alt={author.name}
+                />
                 <h1>{author.name}</h1>
-                <div>{author.description}</div>
+                <div className="authorDescription">{author.description}</div>
               </div>
-              <div>
-                <hr />
+
+              <div className="containerNewsAuthor">
                 <h2>News by Author</h2>
                 {newsByAuthor.length > 0 ? (
                   newsByAuthor.map(item => {
                     return (
-                      <Link key={item.id} to={`/news/${item.id}/${item.title}`}>
-                        <Media as="li">
+                      <Link
+                        className="linkNews"
+                        key={item.id}
+                        to={`/news/${item.id}/${item.title}`}
+                      >
+                        <Media className="cards" as="li">
                           <img
-                            width={200}
+                            width={255}
                             height={200}
                             className="mr-3"
                             src={item.image}
@@ -84,6 +95,7 @@ class AuthorPage extends Component {
             </div>
           </Col>
           <Col xs={12} md={4}>
+            <Weather />
             <Advertisement />
           </Col>
         </Row>
