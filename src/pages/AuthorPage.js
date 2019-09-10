@@ -85,6 +85,7 @@ class AuthorPage extends Component {
                             )}
                           </Media.Body>
                         </Media>
+                        <hr />
                       </Link>
                     );
                   })

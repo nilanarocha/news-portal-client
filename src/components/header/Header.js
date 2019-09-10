@@ -8,7 +8,7 @@ class Header extends Component {
   render() {
     return (
       <header>
-        <Navbar bg="light" expand="lg">
+        <Navbar className="navBar" bg="light" expand="lg">
           <Container>
             <Navbar.Brand variant="outline-danger" href="/">
               News Portal

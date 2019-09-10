@@ -3,6 +3,7 @@ import config from "../../helpers/config";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "./Footer.css";
+import { Button, Form } from "react-bootstrap";
 
 const MAX_NUMBER_NEWS_PER_CATEGORY_IN_FOOTER = 2;
 class Footer extends Component {
@@ -99,16 +100,34 @@ class Footer extends Component {
                 <div className="kilimanjaro_part">
                   <h5>Contact us</h5>
                   <div className="kilimanjaro_single_contact_info">
-                    <h5>Phone:</h5>
-                    <p>
-                      +255 789 54 50 40 <br /> +2255 766 90 94 00
-                    </p>
-                  </div>
-                  <div className="kilimanjaro_single_contact_info">
                     <h5>Email:</h5>
-                    <p>
-                      support@news-portal.com <br /> nilanaarquitetura@gmail.com
-                    </p>
+                    <form
+                      method="POST"
+                      action="https://formspree.io/nilanaarquitetura@gmail.com"
+                    >
+                      <input
+                        className="input-agent"
+                        type="email"
+                        name="email"
+                        placeholder="Your email"
+                      />
+
+                      <textarea
+                        className="textarea"
+                        name="message"
+                        placeholder="Message"
+                      ></textarea>
+                      <Form.Group
+                        type="hidden"
+                        name="_subject"
+                        id="email-subject"
+                        value=""
+                      ></Form.Group>
+
+                      <Button variant="outline-danger" type="submit">
+                        Send Email
+                      </Button>
+                    </form>
                   </div>
                 </div>
               </div>

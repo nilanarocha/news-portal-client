@@ -49,7 +49,7 @@ ul {
 }
 
 .kilimanjaro_bottom_header_one {
-  background-color: #737373;
+  background-color: #8f8f8f;
 }
 
 .section_padding_50 {
@@ -126,7 +126,7 @@ ul {
   font-size: 13px;
 }
 
-top-15 {
+.top-15 {
   margin-top: 15px;
 }
 
@@ -223,7 +223,7 @@ p, ul li, ol li {
 }
 
 .kilimanjaro_blog_area {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid rgb(85, 84, 84);
   margin-bottom: 15px;
   padding: 0 0 15px 90px;
   position: relative;
@@ -231,7 +231,7 @@ p, ul li, ol li {
 }
 
 .kilimanjaro_links a {
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid rgb(85, 84, 84);
   color: rgba(255, 255, 255, 0.5);
   color: #707070;
   display: block;
@@ -242,4 +242,21 @@ p, ul li, ol li {
 
 .linkFooter {
   color: red;
+}
+
+.input-agent {
+  width: 300px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #E5E5E5;
+}
+
+.textarea {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 300px;
+  height: 100px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #E5E5E5;
 }

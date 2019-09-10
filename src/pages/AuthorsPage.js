@@ -37,7 +37,7 @@ class AuthorsPage extends Component {
             authors.map(author => {
               return (
                 <Col key={author.id} xs={12} sm={6} md={4} lg={4}>
-                  <Link to={`/author/${author.id}`}>
+                  <Link className="linkAuthors" to={`/author/${author.id}`}>
                     <div className="image-flip">
                       <div className="mainflip">
                         <div className="frontside">
