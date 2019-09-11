@@ -3,7 +3,8 @@ import config from "../helpers/config";
 import BaseLayout from "./BaseLayout";
 import axios from "axios";
 import { formatDate } from "../helpers/format-date";
-import { Row, Col, Container } from "react-bootstrap";
+import WebSpeech from "../helpers/speech";
+import { Row, Col, Container, Button } from "react-bootstrap";
 
 import { Link } from "react-router-dom";
 import Advertisement from "../components/advertisement/Advertisement";
@@ -15,6 +16,8 @@ class NewsPage extends Component {
   state = {
     news: null
   };
+
+  Speech = new WebSpeech();
 
   async componentDidMount() {
     try {
@@ -30,18 +33,40 @@ class NewsPage extends Component {
     }
   }
 
+  onClickHandler = () => {
+    const config = {
+      rate: 1,
+      pitch: 1,
+      volume: 1
+    };
+
+    this.Speech.sayText(
+      document.querySelector(".news-content").innerText,
+      config
+    );
+
+    console.log("event dispatched!");
+  };
+
+  onStopReadingText = () => {
+    this.Speech.stop();
+  };
+
   render() {
     const { news } = this.state;
 
     if (news === null) {
       return null;
     }
+
+    const browserSupportsWebSpeech = window.speechSynthesis;
+
     return (
       <BaseLayout>
         <Row>
           <Col xs={12} md={8}>
             <Container className="containerNews">
-              <div>
+              <div className="news-content">
                 <h1>{news.title}</h1>
 
                 <p className="title">
@@ -71,8 +96,28 @@ class NewsPage extends Component {
 
                 <p className="headline">{news.headline}</p>
 
-                <div classNames="descriptionNews">{news.description}</div>
+                <div className="descriptionNews">{news.description}</div>
               </div>
+
+              {browserSupportsWebSpeech && (
+                <>
+                  <Button
+                    className="article"
+                    variant="outline-danger"
+                    onClick={this.onClickHandler}
+                  >
+                    Read Content
+                  </Button>
+
+                  <Button
+                    className="article"
+                    variant="outline-danger"
+                    onClick={this.onStopReadingText}
+                  >
+                    Stop Reading
+                  </Button>
+                </>
+              )}
             </Container>
           </Col>
           <Col xs={12} md={4}>

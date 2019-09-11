@@ -1,68 +1,102 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# News Portal
 
-## Available Scripts
+This is my project using React(Front-end), Ruby on Rails(backend) and PostgreSQl.
 
-In the project directory, you can run:
+## Setup
 
-### `npm start`
+1. Install PostgreSQL
+2. Install Ruby
+3. Install Rails
+4. Clone this repository
+5. Run these commands
+   5.1. Create database
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+rails db:create
+```
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+5.2 Run database migrations for this project
 
-### `npm test`
+```
+rails db:migrate
+```
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5.3 Populate database
 
-### `npm run build`
+```
+rails db:seed
+```
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5.4 Run local server
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```
+rails server
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+6. Open the browser in http://localhost:3000
 
-### `npm run eject`
+## Deployment
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+This project is using Heroku as deployment environment, which requires [a Heroku account](https://signup.heroku.com/www-header) and [heroku toolbelt installed](https://toolbelt.heroku.com/).
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+After install Heroku toolbelt locally, check if it's working properly running these commands in your terminal
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+heroku --version
+which heroku
+heroku login
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Also, make sure the Github branch is up-to-date with your code changes. After that run these commands:
 
-## Learn More
+```
+git push origin master
+git push heroku master
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If you need to clean the database, please access https://data.heroku.com/datastores, to find the project database and click in `Reset database` button
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img width="1436" alt="Screen Shot 2019-08-02 at 12 57 42 am" src="https://user-images.githubusercontent.com/39023533/62304026-8cc5bb00-b4c0-11e9-9a5b-df7fcee077c7.png">
 
-### Code Splitting
+After reset the database, run these commands in your command line:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+```
+heroku run rails db:migrate
+heroku run rails db:seed
+heroku open
+```
 
-### Analyzing the Bundle Size
+## Demo
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+The demo page is hosted on Heroku you can access on this link https://news-portal-client.herokuapp.com/#/.
 
-### Making a Progressive Web App
+## Screenshots - Front-end
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### Homepage
 
-### Advanced Configuration
+<img src="https://user-images.githubusercontent.com/39023533/64612437-2618b300-d417-11e9-9e52-0f781470bd1f.png" alt="" Width="100%" height=""/>
+<img src="https://user-images.githubusercontent.com/39023533/64612615-9293b200-d417-11e9-83bf-b2bf0f088830.png" alt="" Width="100%" height=""/>
+<img src="https://user-images.githubusercontent.com/39023533/64612696-bf47c980-d417-11e9-8714-24a3791130de.png" alt="" Width="100%" height=""/>
+ 
+### News Category Page - World  
+<img src="https://user-images.githubusercontent.com/39023533/64612780-fa49fd00-d417-11e9-8390-ccf7bde87c0b.png" alt="" Width="100%" height=""/>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### News Category Page - Entertainment
 
-### Deployment
+<img src="https://user-images.githubusercontent.com/39023533/64612933-4b59f100-d418-11e9-81c6-72ed6c38eb21.png" alt="" Width="100%" height=""/>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+### Authors Page
 
-### `npm run build` fails to minify
+<img src="https://user-images.githubusercontent.com/39023533/64613152-d1763780-d418-11e9-8ffb-7f055ca0ad02.png" alt="" Width="100%" height=""/>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Author Page
+
+<img src="" alt="" Width="100%" height=""/>
+
+## Screenshots - Front-end
+
+## Author
+
+_Nilana Rocha (nilanarocha)_
+
+- <http://github.com/nilanarocha>

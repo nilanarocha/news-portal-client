@@ -65,30 +65,26 @@ class WeatherPage extends Component {
 
           <hr className="horizontalRow" />
           <div>
-            <Table className="tableWeather" striped size="sm">
-              <thead>
-                <tr>
-                  <th className="tHead">City</th>
-                  {/* <th>Date</th> */}
-                  <th className="tHead">Today</th>
-                  <th className="tHead">Temperature</th>
-                  {/* <th>Sunset</th> */}
-                  {/* <th>Sunrise</th> */}
-                </tr>
-              </thead>
-              <tbody>
-                {weather.map(weather => (
-                  <tr key={weather.weather}>
-                    <td>{weather.city_name}</td>
-                    {/* <td>{weather.datetime}</td> */}
-                    <td>{weather.weather.description}</td>
-                    <td>{weather.app_temp}°</td>
-                    {/* <td>{weather.sunset}</td> */}
-                    {/* <td>{weather.sunrise}</td> */}
+            {weather.length > 0 && (
+              <Table className="tableWeather" striped size="sm">
+                <thead>
+                  <tr>
+                    <th className="tHead">City</th>
+                    <th className="tHead">Today</th>
+                    <th className="tHead">Temperature</th>
                   </tr>
-                ))}
-              </tbody>
-            </Table>
+                </thead>
+                <tbody>
+                  {weather.map(weather => (
+                    <tr key={weather.weather}>
+                      <td>{weather.city_name}</td>
+                      <td>{weather.weather.description}</td>
+                      <td>{weather.app_temp}°</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </Table>
+            )}
           </div>
         </div>
       </Container>
