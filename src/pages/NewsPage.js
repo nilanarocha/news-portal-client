@@ -95,8 +95,10 @@ class NewsPage extends Component {
                 <hr />
 
                 <p className="headline">{news.headline}</p>
-
-                <div className="descriptionNews">{news.description}</div>
+                <div
+                  className="descriptionNews"
+                  dangerouslySetInnerHTML={{ __html: news.description }}
+                />
               </div>
 
               {browserSupportsWebSpeech && (
