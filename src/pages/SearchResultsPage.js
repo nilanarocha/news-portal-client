@@ -12,7 +12,7 @@ import Advertisement from "../components/advertisement/Advertisement";
 
 const MAX_WORDS_TO_SHOW_IN_NEWS_DESCRIPTION = 20;
 
-class SearchPage extends Component {
+class SearchResultsPage extends Component {
   state = {
     search: []
   };
@@ -95,4 +95,4 @@ class SearchPage extends Component {
   }
 }
 
-export default SearchPage;
+export default SearchResultsPage;
