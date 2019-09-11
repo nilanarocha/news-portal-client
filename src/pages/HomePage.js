@@ -65,7 +65,7 @@ class HomePage extends Component {
                             <img
                               width={255}
                               height={200}
-                              className="mr-3"
+                              className="mr-3 image-news"
                               src={item.image}
                               alt={item.title}
                             />

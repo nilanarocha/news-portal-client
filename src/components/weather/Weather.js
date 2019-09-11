@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Table, Container, Button, Form } from "react-bootstrap";
+import { Table, Container, Button, Form, Col } from "react-bootstrap";
 import "./Weather.css";
 
 class WeatherPage extends Component {
@@ -34,59 +34,61 @@ class WeatherPage extends Component {
     }
     return (
       <Container className="containerWeather">
-        <div>
-          <p className="city">
-            Weather Forecast{" "}
-            <img
-              src="https://images-eu.ssl-images-amazon.com/images/I/41wkG24yDkL.png"
-              width={30}
-              height={30}
-              alt="weather icon"
-            />
-          </p>
-
-          <Form.Group controlId="formBasicPassword">
-            <Form.Control
-              className="search"
-              type="search"
-              placeholder="Search by city"
-              onInput={this._handleInput}
-            />
-          </Form.Group>
-          <Button
-            className="submit"
-            type="button"
-            variant="outline-danger"
-            size="sm"
-            onClick={this.fetchWeatherByCity}
-          >
-            Search
-          </Button>
-
-          <hr className="horizontalRow" />
+        <Col xs={12}>
           <div>
-            {weather.length > 0 && (
-              <Table className="tableWeather" striped size="sm">
-                <thead>
-                  <tr>
-                    <th className="tHead">City</th>
-                    <th className="tHead">Today</th>
-                    <th className="tHead">Temperature</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {weather.map(weather => (
-                    <tr key={weather.weather}>
-                      <td>{weather.city_name}</td>
-                      <td>{weather.weather.description}</td>
-                      <td>{weather.app_temp}°</td>
+            <p className="city">
+              Weather Forecast{" "}
+              <img
+                src="https://images-eu.ssl-images-amazon.com/images/I/41wkG24yDkL.png"
+                width={30}
+                height={30}
+                alt="weather icon"
+              />
+            </p>
+
+            <Form.Group controlId="formBasicPassword">
+              <Form.Control
+                className="search"
+                type="search"
+                placeholder="Search by city"
+                onInput={this._handleInput}
+              />
+            </Form.Group>
+            <Button
+              className="submit"
+              type="button"
+              variant="outline-danger"
+              size="sm"
+              onClick={this.fetchWeatherByCity}
+            >
+              Search
+            </Button>
+
+            <hr className="horizontalRow" />
+            <div>
+              {weather.length > 0 && (
+                <Table className="tableWeather" striped size="sm">
+                  <thead>
+                    <tr>
+                      <th className="tHead">City</th>
+                      <th className="tHead">Today</th>
+                      <th className="tHead">Temperature</th>
                     </tr>
-                  ))}
-                </tbody>
-              </Table>
-            )}
+                  </thead>
+                  <tbody>
+                    {weather.map(weather => (
+                      <tr key={weather.weather}>
+                        <td>{weather.city_name}</td>
+                        <td>{weather.weather.description}</td>
+                        <td>{weather.app_temp}°</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
+              )}
+            </div>
           </div>
-        </div>
+        </Col>
       </Container>
     );
   }

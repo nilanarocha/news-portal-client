@@ -5,3 +5,7 @@
 .navbar-light .navbar-brand {
   color: red;
 }
+
+.navbar-light .navbar-toggler {
+  border: 1px solid transparent;
+}
