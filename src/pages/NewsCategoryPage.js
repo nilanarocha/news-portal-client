@@ -16,7 +16,24 @@ class NewsCategoryPage extends Component {
     news: []
   };
 
+  // react function that checks if the components needs to be update or not.
+  // It's required because the react-router doesn't remove the component
+  // when category prop is changed.
+  async componentDidUpdate(newProps) {
+    if (
+      newProps.match &&
+      this.props.match &&
+      newProps.match.params.category !== this.props.match.params.category
+    ) {
+      await this.fetchNewsByCategory();
+    }
+  }
+
   async componentDidMount() {
+    await this.fetchNewsByCategory();
+  }
+
+  async fetchNewsByCategory() {
     try {
       const { match } = this.props;
 
@@ -36,7 +53,6 @@ class NewsCategoryPage extends Component {
       console.log(error);
     }
   }
-
   render() {
     const { news } = this.state;
 
