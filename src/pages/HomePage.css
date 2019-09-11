@@ -41,11 +41,4 @@ h2 {
     max-width: 100%;
     height: auto;
   }
-
-  /* 
-    .image-news:after {
-      display: block;
-      content: "";
-      clear: both;
-    } */
 }

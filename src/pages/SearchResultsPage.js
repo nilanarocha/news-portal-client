@@ -53,37 +53,43 @@ class SearchResultsPage extends Component {
               <h3>
                 Result of the search by "{location.search}" ({search.length})
               </h3>
-
-              {search.length > 0 ? (
-                <ul className="list-unstyled">
-                  {search.map(item => {
-                    return (
-                      <Link key={item.id} to={`/news/${item.id}/${item.title}`}>
-                        <Media as="li">
-                          <img
-                            width={200}
-                            height={200}
-                            className="mr-3"
-                            src={item.image}
-                            alt={item.title}
-                          />
-                          <Media.Body>
-                            <h5>{item.title}</h5>
-                            <div>
-                              {returnMaxWordsInText(
-                                item.description,
-                                MAX_WORDS_TO_SHOW_IN_NEWS_DESCRIPTION
-                              )}
-                            </div>
-                          </Media.Body>
-                        </Media>
-                      </Link>
-                    );
-                  })}
-                </ul>
-              ) : (
-                <h3>No results</h3>
-              )}
+              <div className="containerNewsCategory">
+                {search.length > 0 ? (
+                  <ul className="list-unstyled">
+                    {search.map(item => {
+                      return (
+                        <Link
+                          className="linkNews"
+                          key={item.id}
+                          to={`/news/${item.id}/${item.title}`}
+                        >
+                          <Media className="cards" as="li">
+                            <img
+                              width={200}
+                              height={200}
+                              className="mr-3 image-news"
+                              src={item.image}
+                              alt="author"
+                            />
+                            <Media.Body>
+                              <h3>{item.title}</h3>
+                              <div>
+                                {returnMaxWordsInText(
+                                  item.description,
+                                  MAX_WORDS_TO_SHOW_IN_NEWS_DESCRIPTION
+                                )}
+                              </div>
+                            </Media.Body>
+                          </Media>
+                          <hr />
+                        </Link>
+                      );
+                    })}
+                  </ul>
+                ) : (
+                  <h3>No results</h3>
+                )}
+              </div>
             </div>
           </Col>
           <Col xs={12} md={4}>

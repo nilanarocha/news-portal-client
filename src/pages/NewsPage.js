@@ -87,7 +87,7 @@ class NewsPage extends Component {
                 </p>
                 <hr />
                 <img
-                  className="imgNews"
+                  className="image-news-item"
                   src={news.image}
                   width="500"
                   alt={news.title}

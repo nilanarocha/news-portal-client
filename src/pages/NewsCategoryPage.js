@@ -75,7 +75,7 @@ class NewsCategoryPage extends Component {
                             <img
                               width={200}
                               height={200}
-                              className="mr-3"
+                              className="mr-3 image-news"
                               src={item.image}
                               alt="author"
                             />

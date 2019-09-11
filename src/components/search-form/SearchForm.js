@@ -3,6 +3,8 @@ import { Form, Button } from "react-bootstrap";
 import { withRouter } from "react-router";
 import queryString from "query-string";
 
+import "./SearchForm.css";
+
 class BaseSearchForm extends Component {
   constructor(props) {
     super(props);
@@ -43,7 +45,11 @@ class BaseSearchForm extends Component {
             onChange={this.handleChange}
           />
         </Form.Group>
-        <Button variant="outline-danger" type="submit">
+        <Button
+          className="search-form-button"
+          variant="outline-danger"
+          type="submit"
+        >
           Search
         </Button>
       </Form>
