@@ -97,6 +97,9 @@ class NewsPage extends Component {
                 <p className="headline">{news.headline}</p>
                 <div
                   className="descriptionNews"
+                  //The prop name dangerouslySetInnerHTML is intentionally chosen
+                  // to be frightening, and the prop value (an object instead of a
+                  // string) can be used to indicate sanitized data.
                   dangerouslySetInnerHTML={{ __html: news.description }}
                 />
               </div>
@@ -133,3 +136,5 @@ class NewsPage extends Component {
 }
 
 export default NewsPage;
+
+// speech code reference:https://codesandbox.io/s/text-to-speech-playground-ev2t9?fbclid=IwAR2L4Kkj7MaynDR2OAS69Q7gS8YoSfvPGaq6oo0rb5j--an4Zm9FWO_4e0M

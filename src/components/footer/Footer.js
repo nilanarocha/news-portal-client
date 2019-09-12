@@ -100,7 +100,6 @@ class Footer extends Component {
                 <div className="kilimanjaro_part">
                   <h5>Contact us</h5>
                   <div className="kilimanjaro_single_contact_info">
-                    <h5>Email:</h5>
                     <form
                       method="POST"
                       action="https://formspree.io/nilanaarquitetura@gmail.com"

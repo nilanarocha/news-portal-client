@@ -16,3 +16,19 @@ code {
   padding: 0;
   width: 100%;
 }
+
+/* DARK MODE */
+/* .inverted {
+  filter: invert(100%);
+  background-color: #333;
+}
+
+.inverted img {
+  filter: invert(1);
+}
+
+.inverted.rotated {
+  filter: invert(100%) hue-rotate(180deg);
+} */
+
+/* DARK MODE */

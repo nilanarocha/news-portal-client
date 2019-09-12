@@ -1,8 +1,17 @@
 # News Portal
 
-This is my project using React(Front-end), Ruby on Rails(backend) and PostgreSQl.
+This is The News Portal websit. It simulates a real news portal like CNN, BCC and
+others.
 
-## Setup
+### Tecnologies Used
+
+1. React JS(Front-end)
+2. Ruby on Rails(back-end)
+3. PostgreSQl
+4. React-Bootstrap
+5. bootsnipp
+
+## Setup (Back-end)
 
 1. Install PostgreSQL
 2. Install Ruby
@@ -66,9 +75,41 @@ heroku run rails db:seed
 heroku open
 ```
 
+## Screenshots - (Back-end)
+
+### Admin area - Add + news
+
+<img src="https://user-images.githubusercontent.com/39023533/64746737-0e911580-d550-11e9-8750-fc875b839ff3.png" alt="" Width="100%" height=""/>
+
+<img src="https://user-images.githubusercontent.com/39023533/64746804-59ab2880-d550-11e9-8b28-c44c14c8d4a6.png" alt="" Width="100%" height=""/>
+
+<img src="https://user-images.githubusercontent.com/39023533/64746835-7a737e00-d550-11e9-84f4-42867635fbd0.png" alt="" Width="100%" height=""/>
+
+<img src="https://user-images.githubusercontent.com/39023533/64746855-8fe8a800-d550-11e9-97ed-705b2cc15bd9.png" alt="" Width="100%" height=""/>
+
+## Setup (Front-end)
+
+1. Clone this repository
+2. Run these commands
+
+   2.1 Install all modules listed as dependencies in package.json
+
+```
+npm install
+```
+
+2.2 Run local client
+
+```
+
+npm run start
+```
+
+3. Open the browser in http://localhost:3000
+
 ## Demo
 
-The demo page is hosted on Heroku you can access on this link https://news-portal-client.herokuapp.com/#/.
+The demo page is hosted on Heroku you can access on this links https://news-portal-client.herokuapp.com/#/, https://news-portal-server-api.herokuapp.com/authors.
 
 ## Screenshots - Front-end
 
@@ -92,8 +133,6 @@ The demo page is hosted on Heroku you can access on this link https://news-porta
 ### Author Page
 
 <img src="" alt="" Width="100%" height=""/>
-
-## Screenshots - Front-end
 
 ## Author
 
