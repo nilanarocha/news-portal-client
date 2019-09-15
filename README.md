@@ -1,15 +1,15 @@
 # News Portal
 
-This is The News Portal websit. It simulates a real news portal like CNN, BCC and
+This is The News Portal website. It simulates a real news portal like CNN, BCC and
 others.
 
-### Tecnologies Used
+### Tech stack
 
 1. React JS(Front-end)
-2. Ruby on Rails(back-end)
+2. Ruby on Rails(Admin, back-end, API)
 3. PostgreSQl
 4. React-Bootstrap
-5. bootsnipp
+
 
 ## Setup (Back-end)
 
@@ -74,6 +74,8 @@ heroku run rails db:migrate
 heroku run rails db:seed
 heroku open
 ```
+
+If you prefer, you can just run `./deploy.sh`.
 
 ## Screenshots - (Back-end)
 
