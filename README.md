@@ -6,43 +6,27 @@ others.
 ### Tech stack
 
 1. React JS(Front-end)
-2. Ruby on Rails(Admin, back-end, API)
-3. PostgreSQl
-4. React-Bootstrap
+2. React-Bootstrap
 
+## Setup (Front-end)
 
-## Setup (Back-end)
+1. Clone this repository
+2. Run these commands
 
-1. Install PostgreSQL
-2. Install Ruby
-3. Install Rails
-4. Clone this repository
-5. Run these commands
-   5.1. Create database
+   2.1 Install all modules listed as dependencies in `package.json
 
 ```
-rails db:create
+npm install
 ```
 
-5.2 Run database migrations for this project
+2.2 Run local client
 
 ```
-rails db:migrate
+
+npm run start
 ```
 
-5.3 Populate database
-
-```
-rails db:seed
-```
-
-5.4 Run local server
-
-```
-rails server
-```
-
-6. Open the browser in http://localhost:3000
+3. Open the browser in http://localhost:3000
 
 ## Deployment
 
@@ -63,51 +47,8 @@ git push origin master
 git push heroku master
 ```
 
-If you need to clean the database, please access https://data.heroku.com/datastores, to find the project database and click in `Reset database` button
-
-<img width="1436" alt="Screen Shot 2019-08-02 at 12 57 42 am" src="https://user-images.githubusercontent.com/39023533/62304026-8cc5bb00-b4c0-11e9-9a5b-df7fcee077c7.png">
-
-After reset the database, run these commands in your command line:
-
-```
-heroku run rails db:migrate
-heroku run rails db:seed
-heroku open
-```
-
 If you prefer, you can just run `./deploy.sh`.
 
-## Screenshots - (Back-end)
-
-### Admin area - Add + news
-
-<img src="https://user-images.githubusercontent.com/39023533/64746737-0e911580-d550-11e9-8750-fc875b839ff3.png" alt="" Width="100%" height=""/>
-
-<img src="https://user-images.githubusercontent.com/39023533/64746804-59ab2880-d550-11e9-8b28-c44c14c8d4a6.png" alt="" Width="100%" height=""/>
-
-<img src="https://user-images.githubusercontent.com/39023533/64746835-7a737e00-d550-11e9-84f4-42867635fbd0.png" alt="" Width="100%" height=""/>
-
-<img src="https://user-images.githubusercontent.com/39023533/64746855-8fe8a800-d550-11e9-97ed-705b2cc15bd9.png" alt="" Width="100%" height=""/>
-
-## Setup (Front-end)
-
-1. Clone this repository
-2. Run these commands
-
-   2.1 Install all modules listed as dependencies in package.json
-
-```
-npm install
-```
-
-2.2 Run local client
-
-```
-
-npm run start
-```
-
-3. Open the browser in http://localhost:3000
 
 ## Demo
 
@@ -132,9 +73,6 @@ The demo page is hosted on Heroku you can access on this links https://news-port
 
 <img src="https://user-images.githubusercontent.com/39023533/64613152-d1763780-d418-11e9-8ffb-7f055ca0ad02.png" alt="" Width="100%" height=""/>
 
-### Author Page
-
-<img src="" alt="" Width="100%" height=""/>
 
 ## Author
 
