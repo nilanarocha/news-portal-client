@@ -1,7 +1,11 @@
-# News Portal
+# News Portal Client
 
 This is The News Portal website. It simulates a real news portal like CNN, BCC and
-others.
+others. 
+
+## Running the project locally
+
+This project depends of [news-portal-server](https://github.com/nilanarocha/news-portal-server) to be running in your local environment. So you need to follow the described steps in [this link](https://github.com/nilanarocha/news-portal-server/blob/master/README.md) for run that locally.
 
 ### Tech stack
 
