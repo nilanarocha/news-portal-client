@@ -9,8 +9,9 @@ This project depends of [news-portal-server](https://github.com/nilanarocha/news
 
 ### Tech stack
 
-1. React JS(Front-end)
-2. React-Bootstrap
+1. [React JS](https://reactjs.org/)
+2. [React-Bootstrap](https://react-bootstrap.github.io/)
+3. [Axios](https://github.com/axios/axios)
 
 ## Setup (Front-end)
 
