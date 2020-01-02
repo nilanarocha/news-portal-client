@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import "./Header.css";
-import SearchForm from "../search-form/SearchForm";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import './Header.css';
+import SearchForm from '../search-form/SearchForm';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 class Header extends Component {
   render() {
@@ -27,6 +27,9 @@ class Header extends Component {
                 </Link>
                 <Link className="nav-link" to="/author">
                   Authors
+                </Link>
+                <Link className="nav-link" to="/travel">
+                  Travel
                 </Link>
               </Nav>
               <SearchForm />

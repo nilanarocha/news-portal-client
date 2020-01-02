@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import BaseLayout from "./BaseLayout";
-import config from "../helpers/config";
-import { Link } from "react-router-dom";
-import { Row, Col } from "react-bootstrap";
-import axios from "axios";
-import "./AuthorsPage.css";
-import { returnMaxWordsInText } from "../helpers/truncate-words-in-text";
-import Advertisement from "../components/advertisement/Advertisement";
-import Weather from "../components/weather/Weather";
+import React, { Component } from 'react';
+import BaseLayout from './BaseLayout';
+import config from '../helpers/config';
+import { Link } from 'react-router-dom';
+import { Row, Col } from 'react-bootstrap';
+import axios from 'axios';
+import './AuthorsPage.css';
+import { returnMaxWordsInText } from '../helpers/truncate-words-in-text';
+import Advertisement from '../components/advertisement/Advertisement';
+import Weather from '../components/weather/Weather';
 
 const MAX_WORDS_TO_SHOW_IN_NEWS_DESCRIPTION = 20;
 class AuthorsPage extends Component {
@@ -26,7 +26,7 @@ class AuthorsPage extends Component {
       console.log(error);
     }
   }
-
+  P;
   render() {
     const { authors } = this.state;
 
@@ -54,7 +54,7 @@ class AuthorsPage extends Component {
                               <h4 className="card-title">{author.title}</h4>
 
                               <div>
-                                {" "}
+                                {' '}
                                 <p>
                                   {returnMaxWordsInText(
                                     author.description,
