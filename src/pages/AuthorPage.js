@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import config from "../helpers/config";
-import BaseLayout from "./BaseLayout";
-import { Link } from "react-router-dom";
-import axios from "axios";
-import { Media, Row, Col } from "react-bootstrap";
-import Advertisement from "../components/advertisement/Advertisement";
+import React, { Component } from 'react';
+import config from '../helpers/config';
+import BaseLayout from './BaseLayout';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { Media, Row, Col } from 'react-bootstrap';
+import Advertisement from '../components/advertisement/Advertisement';
 
-import { returnMaxWordsInText } from "../helpers/truncate-words-in-text";
-import Weather from "../components/weather/Weather";
-import "./AuthorPage.css";
+import { returnMaxWordsInText } from '../helpers/truncate-words-in-text';
+import Weather from '../components/weather/Weather';
+import './AuthorPage.css';
 
 const MAX_WORDS_TO_SHOW_IN_NEWS_DESCRIPTION = 20;
 
