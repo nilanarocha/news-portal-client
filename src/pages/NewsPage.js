@@ -1,20 +1,20 @@
-import React, { Component } from "react";
-import config from "../helpers/config";
-import BaseLayout from "./BaseLayout";
-import axios from "axios";
-import { formatDate } from "../helpers/format-date";
-import WebSpeech from "../helpers/speech";
-import { Row, Col, Container, Button } from "react-bootstrap";
+import React, { Component } from 'react';
+import config from '../helpers/config';
+import BaseLayout from './BaseLayout';
+import axios from 'axios';
+import { formatDate } from '../helpers/format-date';
+import WebSpeech from '../helpers/speech';
+import { Row, Col, Container, Button } from 'react-bootstrap';
 
-import { Link } from "react-router-dom";
-import Advertisement from "../components/advertisement/Advertisement";
-import Weather from "../components/weather/Weather";
+import { Link } from 'react-router-dom';
+import Advertisement from '../components/advertisement/Advertisement';
+import Weather from '../components/weather/Weather';
 
-import "./NewsPage.css";
+import './NewsPage.css';
 
 class NewsPage extends Component {
   state = {
-    news: null
+    news: null,
   };
 
   Speech = new WebSpeech();
@@ -25,7 +25,7 @@ class NewsPage extends Component {
         `${config.API_URL}/api/news/${this.props.match.params.id}`
       );
       this.setState({
-        news: response.data
+        news: response.data,
       });
       console.log(response);
     } catch (error) {
@@ -37,15 +37,12 @@ class NewsPage extends Component {
     const config = {
       rate: 1,
       pitch: 1,
-      volume: 1
+      volume: 1,
     };
 
-    this.Speech.sayText(
-      document.querySelector(".news-content").innerText,
-      config
-    );
+    this.Speech.sayText(document.querySelector('').innerText, config);
 
-    console.log("event dispatched!");
+    console.log('event dispatched!');
   };
 
   onStopReadingText = () => {
@@ -75,15 +72,15 @@ class NewsPage extends Component {
                     to={`/news/${news.category.name.toLowerCase()}`}
                   >
                     {news.category.name}
-                  </Link>{" "}
-                  -{" "}
+                  </Link>{' '}
+                  -{' '}
                   <Link
                     className="linkAuthorNews"
                     to={`/author/${news.authors_id}`}
                   >
                     By {news.author.name}
                   </Link>
-                  , {formatDate(news.date)}{" "}
+                  , {formatDate(news.date)}{' '}
                 </p>
                 <hr />
                 <img

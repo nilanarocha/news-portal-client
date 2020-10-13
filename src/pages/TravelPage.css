@@ -42,3 +42,8 @@ h1 {
   text-align: center;
   color: #4A4A4B;
 }
+
+.travelImage {
+  margin: 10px auto;
+  box-shadow: 0px 0px 8px #858485;
+}
